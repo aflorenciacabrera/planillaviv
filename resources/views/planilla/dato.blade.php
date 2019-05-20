@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-1">
                                 <input type="text" class="form-control" name="area" id="area" placeholder="" required>
-                                 <input class="form-control"  type="number"  name="personal" step="1" min="0" max="1000000" placeholder="N° ." required/>
+                                 {{-- <input class="form-control"  type="number"  name="personal" step="1" min="0" max="1000000" placeholder="N° ." required/> --}}
                             </div>
                             <div class="col-1">
                                 <label for="fraccion">Fracción:</label>
