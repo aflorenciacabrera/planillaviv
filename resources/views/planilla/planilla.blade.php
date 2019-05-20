@@ -9,26 +9,33 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-center ">
                      <h4 >Planilla de listado de viviendas 2019</h4>
-                     
+                    
+                         
                            <div class="offset-lg-2">
                                <div class="form-group row"> 
-                                    <div class="col-6">
+                                    <div class="col-4">
                                     <label for="planilla"><h4> Planilla: </h4></label>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                     <select name="planilla" id="planilla" class="form-control">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
+                                        @foreach ($dato as $datos)
+                                    <option value="{{$datos->id}}">{{$datos->id}}</option>
+                                     @endforeach
                                         </select>
                                     </div>
+                                     <div class="col-4">
+                                    <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
+                                     </div>
                                 </div>
                             </div>
+                           
                 </div>
-                 {{-- <form method="POST" action="{{url('muestra/nuevo')}}"> --}}
+               
+                    
+               
+                 @foreach ($dato as $datos)
                 <div class="card-body" >
-                        {{-- @csrf --}}
+                   
                  <div class="container">
                 <div class="row">
                     <table class="table table-bordered table-sm">
@@ -42,17 +49,17 @@
                 <tbody>
                 
                 <tr>         
-                    <td><label for="area">Área:</label>  </td>
-                    <td><label for="fraccion">Fracción:</label> </td>
-                    <td><label for="radio">Radio:</label></td> 
-                    <td><label for="sub_grupo">Subgrupo:</label></td> 
+                    <td><label for="area">Área: </label> {{$datos->area}}</td>
+                    <td><label for="fraccion">Fracción: </label> {{$datos->fraccion}}</td>
+                    <td><label for="radio">Radio: </label> {{$datos->radio}}</td> 
+                    <td><label for="sub_grupo">Subgrupo: </label> {{$datos->sub_grupo}}</td> 
                 </tr>
              
                 </tbody>
             </table>
 	        </div>
         </div>
-           
+            
                       
         <div class= "row well-sm well-md" >
         <div class="table-responsive text-center ">   
@@ -76,23 +83,37 @@
                         <th>Casa o Lote</th>
                         <th>Depto o Hab</th>
                         <th>Tipo de Viv </th>
+                        <th>Descripción </th>
  
                     </thead>
-                  
+                         @if($vivienda->count())
                         <tbody> 
-                         {{-- @if(count()) --}}
-                        {{-- @foreach($muestra as $muestras) --}}
+                            
+                         @foreach($vivienda as $viviendas)
+                         @if ($datos->id == $viviendas->dato_id )
                             <tr>
-                                {{-- <td></td> --}}
-
+                                <td>{{$viviendas->manz}}</td>
+                                <td>{{$viviendas->lado}}</td>
+                                <td>{{$viviendas->n_viv_listado}}</td>
+                                <td>{{$viviendas->codigo}}</td>
+                                <td>{{$viviendas->calle}}</td>
+                                <td>{{$viviendas->n_catast}}</td>
+                                <td>{{$viviendas->manz_int_sector}}</td>
+                                <td>{{$viviendas->edifi_mono_tira}}</td>
+                                <td>{{$viviendas->entrada_esca}}</td>
+                                <td>{{$viviendas->piso}}</td>
+                                <td>{{$viviendas->casa_lote}}</td>
+                                <td>{{$viviendas->dpto_hab}}</td>
+                                <td>{{$viviendas->tipo_viv}}</td>
+                                <td>{{$viviendas->descripcion}}</td>
                             </tr> 
-
-                         {{-- @endforeach --}}
-                        {{-- @else --}}
+                             @endif
+                         @endforeach
+                        @else
                         <tr>
                             <td colspan="16">No hay registrados !!</td>
                         </tr>
-                    {{-- @endif - --}}
+                    @endif 
                         </tbody>
                 </table>                
         </div>      
@@ -109,22 +130,23 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><label for="manz">Apellido y Nombre:</label>  </td>
-                    <td><label for="manz">Apellido y Nombre:</label>  </td>
-                    <td><label for="manz">Apellido y Nombre:</label>  </td>
+                <td><label for="manz">Apellido y Nombre:</label>  {{$datos->apeynom_listador}}</td>
+                    <td><label for="manz">Apellido y Nombre:</label> {{$datos->apeynom_supervisor}} </td>
+                    <td><label for="manz">Apellido y Nombre:</label> {{$datos->apeynom_ingresador}}  </td>
                 </tr>
                 <tr>
-                    <td><label for="lado">Fecha:</label> </td>
-                    <td><label for="lado">Fecha:</label> </td>
-                    <td><label for="lado">Fecha:</label> </td>
+                <td><label for="lado">Fecha:</label> {{$datos->fecha_list}}</td>
+                    <td><label for="lado">Fecha:</label> {{$datos->fecha_sup}} </td>
+                    <td><label for="lado">Fecha:</label> {{$datos->fecha_ing}}</td>
                 </tr>               
                 </tbody>
             </table>
 	        </div>
         </div>
+        @endforeach
                     </div>       
             </div>
-            
+
         </div> 
            
     </div>

@@ -50,7 +50,7 @@
                                 </li>
                             @endif --}}
                         @else
-                            <li class="nav-item">  
+                            {{-- <li class="nav-item">  
                                 <a   href="{{url('/planilla')}}" class="nav-link"  role ="button" >
                                 <i class="fa fa-home"></i> Planilla </a> 
                             </li>
@@ -61,7 +61,7 @@
                             <li class="nav-item">  
                                 <a   href="{{url('/planilla/viviendas')}}" class="nav-link"  role ="button" >
                                 <i class="fa fa-home"></i> Viviendas </a> 
-                            </li>
+                            </li> --}}
 
                             
                             <li class="nav-item dropdown">

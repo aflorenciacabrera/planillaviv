@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/home', function () {
     return view('planilla.planilla');
 });
+Route::get('/home', 'PlanillaController@planilla');
 Route::get('/planilla', 'PlanillaController@planilla');
 
 Route::get('/planilla/datos', 'DatosController@datos');
