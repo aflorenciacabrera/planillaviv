@@ -8,9 +8,9 @@
         <div class="col-12 offset-lg-0">
             <div class="card">
                 <div class="card-header d-flex justify-content-center ">
+            @if($vivienda->count())
                      <h4 >Planilla de listado de viviendas 2019</h4>
                     
-                         
                            <div class="offset-lg-2">
                                <div class="form-group row"> 
                                     <div class="col-4">
@@ -19,22 +19,17 @@
                                     <div class="col-4">
                                     <select name="planilla" id="planilla" class="form-control">
                                         @foreach ($dato as $datos)
-                                    <option value="{{$datos->id}}">{{$datos->id}}</option>
-                                     @endforeach
+                                            <option value="{{$datos->id}}">{{$datos->id}}</option>
+                                         @endforeach
                                         </select>
                                     </div>
                                      <div class="col-4">
                                     <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
                                      </div>
                                 </div>
-                            </div>
-                           
-                </div>
-               
-                    
-                  @if($dato->count())
+                            </div>                        
+                </div>                 
                  @foreach ($dato as $datos)
-                  
                 <div class="card-body" >
                    
                  <div class="container">

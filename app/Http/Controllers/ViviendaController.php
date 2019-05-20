@@ -11,7 +11,6 @@ class ViviendaController extends Controller
     //
     public function viviendas($id)
     {
-        
         return view( 'planilla.vivienda')->with('dato',$id);
     }
 

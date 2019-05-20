@@ -8,10 +8,8 @@
         <div class="col-12 offset-lg-0">
             <div class="card">
                 <div class="card-header d-flex justify-content-center">
-                    <h4 >Planilla de listado de viviendas 2019</h4>
-                    
+                    <h4 >Planilla de listado de viviendas 2019</h4>         
                 </div>
-                 
             <form method="POST" action="{{url('planilla/datos')}}">
                 <div class="card-body" >
                         @csrf
