@@ -19,49 +19,49 @@ class UserTableSeeder extends Seeder
         $role_encar = Role::where('name', 'encargado')->first();
         
         $user = new User();
-        $user->name = 'Admin';
+        $user->name = 'ADMINISTRADOR';
         $user->email = 'admin';
         $user->password = bcrypt( '12345678');
         $user->save();
         $user->roles()->attach($role_admin);
 
         $user = new User();
-        $user->name = 'Lidia Esther Blanco';
+        $user->name = 'LIDIA ESTER BLANCO';
         $user->email = 'leblanco';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach( $role_encar);
 
         $user = new User();
-        $user->name = 'Margarita Lovato Torres';
+        $user->name = 'MARGARITA LOVATO TORRES';
         $user->email = 'mltorres';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
         
         $user = new User();
-        $user->name = 'Rosario Pioli';
+        $user->name = 'ROSARIO PIOLI';
         $user->email = 'rpioli';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
-        $user->name = 'Rosario Garrido';
+        $user->name = 'ROSARIO GARRIDO';
         $user->email = 'rgarrido';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
-        $user->name = 'Juan Carlos Battilana';
+        $user->name = 'JUAN CARLOS BATTILANA';
         $user->email = 'jcbattilana';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
-        $user->name = 'Jorge Acuña';
+        $user->name = 'JORGE ACUÑA';
         $user->email = 'jacuna';
         $user->password = bcrypt('12345678');
         $user->save();

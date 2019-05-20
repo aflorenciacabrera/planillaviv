@@ -119,7 +119,7 @@
                             <div class="col-3">
                                 <label for="fecha_ing">Fecha:</label>  
                                 <script>
-                                    var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                    var meses = new Array ("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
                                     var f=new Date();
                                     document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
                                 </script> 
