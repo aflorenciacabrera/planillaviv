@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::group(['middleware' => ['auth']], function () {
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', function () {
@@ -30,4 +31,5 @@ Route::post('planilla/datos', 'DatosController@crear');
 
 Route::get('/planilla/viviendas/{id}', 'ViviendaController@viviendas');
 Route::post('planilla/viviendas', 'ViviendaController@crear');
+
 });
