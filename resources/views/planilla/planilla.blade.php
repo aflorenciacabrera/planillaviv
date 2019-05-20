@@ -104,10 +104,15 @@
                                 <td>{{$viviendas->descripcion}}</td>
                             </tr> 
                              @endif
+                            
                          @endforeach
                      
                         </tbody>
+                          
                 </table>
+                    <div class="d-flex  justify-content-center">
+                      {!!$vivienda->links()!!}
+                    </div> 
                                    
         </div>      
         
@@ -145,8 +150,12 @@
     </div>
 </div>
 @else
+  
     <tr>
         <div class="text-center"><h3>No hay registrados !!</h3></div>
     </tr>
-@endif
+    <div class="col-4 pull-right">
+        <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
+    </div>
+    @endif
 @endsection
