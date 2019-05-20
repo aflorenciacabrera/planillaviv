@@ -119,11 +119,13 @@
                             <div class="col-3">
                                 <label for="fecha_ing">Fecha:</label>  
                                 <script>
-                var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                var f=new Date();
-                document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-                                  </script> 
-                                  <input type="hidden" value="f" class="form-control" name="fecha_ing" id="fecha_ing" placeholder="AAAA/MM/DD" required>
+                                    var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                    var f=new Date();
+                                    document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                                </script> 
+                                  {{-- <input type="hidden" value="" class="form-control" name="fecha_ing" id="fecha_ing" placeholder="AAAA/MM/DD" required> --}}
+
+                                 <input type="hidden" name="fecha_ing" step="1" min="2013-01-01" max="2013-12-31" value="<?php echo date("Y-m-d");?>">
                             </div>                                                                    
                         </div>                                                               
                     </div>

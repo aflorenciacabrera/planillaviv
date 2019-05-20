@@ -20,49 +20,49 @@ class UserTableSeeder extends Seeder
         
         $user = new User();
         $user->name = 'Admin';
-        $user->email = 'admin@example.com';
+        $user->email = 'admin';
         $user->password = bcrypt( '12345678');
         $user->save();
         $user->roles()->attach($role_admin);
 
         $user = new User();
         $user->name = 'Lidia Esther Blanco';
-        $user->email = 'leblanco@example.com';
+        $user->email = 'leblanco';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach( $role_encar);
 
         $user = new User();
         $user->name = 'Margarita Lovato Torres';
-        $user->email = 'mltorres@example.com';
+        $user->email = 'mltorres';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
         
         $user = new User();
         $user->name = 'Rosario Pioli';
-        $user->email = 'rpioli@example.com';
+        $user->email = 'rpioli';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
         $user->name = 'Rosario Garrido';
-        $user->email = 'rgarrido@example.com';
+        $user->email = 'rgarrido';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
         $user->name = 'Juan Carlos Battilana';
-        $user->email = 'jcbattilana@example.com';
+        $user->email = 'jcbattilana';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);
 
         $user = new User();
         $user->name = 'Jorge Acuña';
-        $user->email = 'jacuna@example.com';
+        $user->email = 'jacuna';
         $user->password = bcrypt('12345678');
         $user->save();
         $user->roles()->attach($role_ing);

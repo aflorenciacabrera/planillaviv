@@ -32,8 +32,9 @@
                 </div>
                
                     
-               
+                  @if($vivienda->count())
                  @foreach ($dato as $datos)
+                  
                 <div class="card-body" >
                    
                  <div class="container">
@@ -86,7 +87,7 @@
                         <th>Descripción </th>
  
                     </thead>
-                         @if($vivienda->count())
+                      
                         <tbody> 
                             
                          @foreach($vivienda as $viviendas)
@@ -109,13 +110,10 @@
                             </tr> 
                              @endif
                          @endforeach
-                        @else
-                        <tr>
-                            <td colspan="16">No hay registrados !!</td>
-                        </tr>
-                    @endif 
+                     
                         </tbody>
-                </table>                
+                </table>
+                                   
         </div>      
         
         <div class="container">
@@ -151,5 +149,9 @@
            
     </div>
 </div>
-       
+@else
+    <tr>
+        <div class="text-center"><h3>No hay registrados !!</h3></div>
+    </tr>
+@endif
 @endsection
