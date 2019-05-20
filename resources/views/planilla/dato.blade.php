@@ -55,28 +55,28 @@
                             <div class="col-1">
                                 <label for="area">Área:</label>
                             </div>
-                            <div class="col-1">
-                                <input type="text" class="form-control" name="area" id="area" placeholder="" required>
+                            <div class="col-2">
+                                <input type="number" class="form-control" name="area" id="area" step="1" min="0" max="10000" placeholder="" required>
                                  {{-- <input class="form-control"  type="number"  name="personal" step="1" min="0" max="1000000" placeholder="N° ." required/> --}}
                             </div>
                             <div class="col-1">
                                 <label for="fraccion">Fracción:</label>
                             </div>
                             <div class="col-2">
-                                <input type="text" class="form-control" name="fraccion" id="fraccion" placeholder="" required>
+                                <input type="number" class="form-control" name="fraccion" id="fraccion" step="1" min="0" max="10000" placeholder="" required>
                             </div>
                             <div class="col-1">
                                 <label for="radio">Radio:</label>
                             </div>
                             <div class="col-2">
-                                <input type="text" class="form-control" name="radio" id="radio" placeholder="" required>
+                                <input type="number" class="form-control" name="radio" id="radio" step="1" min="0" max="10000" placeholder="" required>
                             </div>
                             {{-- ------------------------- --}}
                             <div class="col-1">
                                 <label for="gr_actual">Subgrupo:</label>
                             </div>
-                            <div class="col-1">
-                                <input type="text" class="form-control" name="sub_grupo" id="sub_grupo" placeholder="" required>
+                            <div class="col-2">
+                                <input type="number" class="form-control" name="sub_grupo" id="sub_grupo" step="1" min="0" max="10000" placeholder="" required>
                             </div>
                         </div>
                         {{-- -------------------Listador------------------------ --}}
@@ -86,7 +86,7 @@
                         <div class="form-group row">  
                             <div class="col-6">
                                 <label for="apeynom_listador">Apellido y Nombre :</label>   
-                                <input type="text" class="form-control" name="apeynom_listador" id="apeynom_listador" placeholder="" required>
+                                <input type="text" class="form-control" name="apeynom_listador" id="apeynom_listador" placeholder="" required pattern="[A-Z]+" title="Texto con letras mayusculas A-Z ">
                             </div>  
                             <div class="col-3">
                                  <label for="fecha_list">Fecha:</label>
@@ -100,7 +100,7 @@
                          <div class="form-group row">   
                              <div class="col-6">
                                 <label for="apeynom_supervisor">Apellido y Nombre :</label>   
-                                <input type="text" class="form-control" name="apeynom_supervisor" id="apeynom_supervisor" placeholder="" required>
+                                <input type="text" class="form-control" name="apeynom_supervisor" id="apeynom_supervisor" placeholder="" required pattern="[A-Z]+" title="Texto con letras mayusculas A-Z ">
                             </div>
                              <div class="col-3">
                                 <label for="fecha_sup">Fecha:</label>

@@ -32,7 +32,7 @@
                 </div>
                
                     
-                  @if($vivienda->count())
+                  @if($dato->count())
                  @foreach ($dato as $datos)
                   
                 <div class="card-body" >
