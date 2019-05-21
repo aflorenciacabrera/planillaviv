@@ -122,10 +122,12 @@
                        
                 </div>
             </div>  
-             <div class="card-footer text-muted d-flex justify-content-end">
+                    <div class="card-footer text-muted d-flex justify-content-end">
                         <div class="col-sm-10 input-column">
                           <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
-                           <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Finalizar</a> 
+                          
+                         
+                           <a href="{{ url('/planilla') }}"  type="submit" role ="button"  class="btn  btn-light active ">Finalizar</a> 
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
                         <button class="btn btn-primary" type="submit">Siguiente</button>
                     </div>

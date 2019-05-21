@@ -8,7 +8,7 @@
         <div class="col-12 offset-lg-0">
             <div class="card">
                 <div class="card-header d-flex justify-content-center ">
-            @if($vivienda->count())
+           
                      <h4 >Planilla de listado de viviendas 2019</h4>
                     
                            <div class="offset-lg-2">
@@ -28,7 +28,8 @@
                                      </div>
                                 </div>
                             </div>                        
-                </div>                 
+                </div>   
+        @if($dato->count())              
                  @foreach ($dato as $datos)
                 <div class="card-body" >
                    
@@ -160,8 +161,8 @@
     <tr>
         <div class="text-center"><h3>No hay registrados !!</h3></div>
     </tr>
-    <div class="col-4 pull-right">
+    {{-- <div class="col-4 pull-right">
         <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
-    </div>
+    </div> --}}
     @endif
 @endsection
