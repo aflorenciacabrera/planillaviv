@@ -116,7 +116,7 @@
                                 <label for="descripcion">Descripción:</label>   
                             </div> 
                             <div class="col-7">
-                               <textarea  class="form-control"name="descripcion" id="descripcion" cols="30" rows="3" pattern="[A-Zaz 0-9]+" title="Texto con letras  A-Z, a-z y 0-9"></textarea>
+                               <textarea   class="form-control"name="descripcion" id="descripcion" cols="30" rows="3" pattern="[A-Zaz 0-9]+" title="Texto con letras  A-Z, a-z y 0-9"></textarea>
                             </div>          
                         </div> 
                        
@@ -125,9 +125,9 @@
                     <div class="card-footer text-muted d-flex justify-content-end">
                         <div class="col-sm-10 input-column">
                           <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
-                          
                          
-                           <a href="{{ url('/planilla') }}"  type="submit" role ="button"  class="btn  btn-light active ">Finalizar</a> 
+                           <button href="{{ url('/planilla') }}"  type="submit"   class="btn  btn-light active ">Finalizar</button> 
+
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
                         <button class="btn btn-primary" type="submit">Siguiente</button>
                     </div>
@@ -138,3 +138,29 @@
 </div>          
 
 @endsection
+
+ <script src="{{ asset('js/jquery.min.js') }} "></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+   $('#n_catast').change(function(){
+
+                if($(this).val() == 'S/N'){
+                    $('#descripcion').removeAttr("disabled")
+                  
+                }else{
+                    $('#descripcion').attr("disabled",'folse').attr('name','descripcion')
+                
+                  $(this).attr('name','n_catast')
+                }
+            })
+            
+             $('#descripcion').change(function(){
+                  $('#n_catast').attr('name','descripcion')
+                  $(this).attr('name','n_catast')
+             })
+             
+     })
+</script>
