@@ -49,17 +49,23 @@
                     <td><label for="fraccion">Fracción: </label> {{$datos->fraccion}}</td>
                     <td><label for="radio">Radio: </label> {{$datos->radio}}</td> 
                     <td><label for="sub_grupo">Subgrupo: </label> {{$datos->sub_grupo}}</td> 
+                   
                 </tr>
-             
+                
                 </tbody>
             </table>
+            <div class="pull-right">
+             <a   href="{{url('/planilla/viviendas/'.$datos->id)}}" class="btn btn-info "  role ="button" > Agregar viviendas </a>
+             
+             </div>
+            
 	        </div>
         </div>
             
                       
         <div class= "row well-sm well-md" >
         <div class="table-responsive text-center ">   
-            
+             <br>
             <table class="table table-bordered table-hover table-sm" id="tab_logic">
             
                {{-- <table id="mytable" class="table table-bordred table-striped">                  --}}
