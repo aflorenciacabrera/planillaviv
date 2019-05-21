@@ -122,17 +122,18 @@
                        
                 </div>
             </div>  
-                    <div class="card-footer ">
-                    <div class="form-group row">
-                        <div class="col-5 input-column">
+                    <div class="card-footer  text-muted d-flex justify-content-end ">
+                  
+                        <div class="col-sm-10 input-column">
                           <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
                          </div>
-                        <div class="col-6">
-                           <button class="btn btn-success" type="submit">GUARDAR</button>
-                        </div>
+                      
+                           <button class="btn btn-success mr-1" type="submit">GUARDAR</button>
+                   
                            <a href="{{ url('/planilla') }}"   role ="button"   class="btn  btn-info  ">FINALIZAR</a> 
+                      
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}  
-                    </div>
+                  
                     </div>
                 </form>
             </div> 
