@@ -130,9 +130,9 @@
                 </div>     
                  <div class="card-footer text-muted d-flex justify-content-end">
                         <div class="col-sm-11 input-column">
-                          <a href="{{ url('/') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
+                          <a href="{{ url('/pantalla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a>  </div>
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
-                        <button class="btn btn-primary" type="submit">Siguiente</button>
+                        <button class="btn btn-success" type="submit">SIGUIENTE</button>
                     </div>
                 </form>
             </div> 
