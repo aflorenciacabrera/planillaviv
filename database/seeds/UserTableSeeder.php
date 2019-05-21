@@ -18,13 +18,15 @@ class UserTableSeeder extends Seeder
         $role_ing = Role::where('name', 'ingresador')->first();
         $role_encar = Role::where('name', 'encargado')->first();
         
+        // Administrador
         $user = new User();
         $user->name = 'ADMINISTRADOR';
         $user->email = 'admin';
         $user->password = bcrypt( '12345678');
         $user->save();
         $user->roles()->attach($role_admin);
-
+        
+        // Encargado
         $user = new User();
         $user->name = 'LIDIA ESTER BLANCO';
         $user->email = 'leblanco';
@@ -32,6 +34,7 @@ class UserTableSeeder extends Seeder
         $user->save();
         $user->roles()->attach( $role_encar);
 
+        // Ingresadores
         $user = new User();
         $user->name = 'MARGARITA LOVATO TORRES';
         $user->email = 'mltorres';
