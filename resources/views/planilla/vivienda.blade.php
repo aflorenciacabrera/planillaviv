@@ -15,7 +15,7 @@
             <form method="POST" action="{{url('planilla/viviendas')}}">
                 <div class="card-body" >
                         @csrf
-                    <div class="offset-lg-2">
+                    <div class="offset-lg-1">
 
                         <div class="form-group row"> 
                             <input  type="hidden"  value="{{$dato}}" class="form-control" name="dato_id" id="dato_id" placeholder="" >
@@ -76,8 +76,8 @@
                             </div>                                             
                         </div>
                         <div class="form-group row"> 
-                            <div class="col-3">
-                                <label for="entrada_esca">Entrada o Escalera:</label>   
+                            <div class="col-1">
+                                <label for="entrada_esca">Entrada/ Escalera:</label>   
                             </div> 
                             <div class="col-2">
                                 <input type="text" class="form-control" name="entrada_esca" id="entrada_esca" placeholder=""  pattern="[A-Z 0-9]+" title="Texto con letras mayusculas A-Z y 0-9">
@@ -85,13 +85,13 @@
                              <div class="col-1">
                                 <label for="piso">Piso:</label>   
                             </div> 
-                            <div class="col-1">
+                            <div class="col-2">
                                 <input type="number" class="form-control" name="piso" id="piso" step="1" min="0" max="10000" placeholder="" >
                             </div> 
                             <div class="col-2">
                                 <label for="casa_lote">Casa o Lote:</label>   
                             </div> 
-                            <div class="col-1">
+                            <div class="col-2">
                                 <input type="text" class="form-control" name="casa_lote" id="casa_lote" placeholder=""  pattern="[A-Z 0-9]+" title="Texto con letras mayusculas A-Z y 0-9">
                             </div>  
                                                                       
@@ -122,14 +122,18 @@
                        
                 </div>
             </div>  
-                    <div class="card-footer text-muted d-flex justify-content-end">
-                        <div class="col-sm-10 input-column">
-                          <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
-                         
-                           <button href="{{ url('/planilla') }}"  type="submit"   class="btn  btn-light active ">Finalizar</button> 
-
+                    <div class="card-footer ">
+                    <div class="form-group row">
+                        <div class="col-5 input-column">
+                          <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a> 
+                         </div>
+                        <div class="col-6">
+                           <button class="btn btn-success" type="submit">GUARDAR</button>
+                        </div>
+                           <a href="{{ url('/planilla') }}"   role ="button"   class="btn  btn-info  ">Finalizar</a> 
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
-                        <button class="btn btn-primary" type="submit">Siguiente</button>
+                       
+                    </div>
                     </div>
                 </form>
             </div> 
