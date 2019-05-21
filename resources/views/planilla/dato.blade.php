@@ -84,7 +84,7 @@
                         <div class="form-group row">  
                             <div class="col-6">
                                 <label for="apeynom_listador">Apellido y Nombre :</label>   
-                                <input type="text" class="form-control" name="apeynom_listador" id="apeynom_listador" placeholder="" required pattern="[A-Z]+" title="Texto con letras mayusculas A-Z ">
+                                <input type="text" class="form-control" name="apeynom_listador" id="apeynom_listador" placeholder="" required pattern="[A-Z ]+" title="Texto con letras mayusculas A-Z ">
                             </div>  
                             <div class="col-3">
                                  <label for="fecha_list">Fecha:</label>
@@ -98,7 +98,7 @@
                          <div class="form-group row">   
                              <div class="col-6">
                                 <label for="apeynom_supervisor">Apellido y Nombre :</label>   
-                                <input type="text" class="form-control" name="apeynom_supervisor" id="apeynom_supervisor" placeholder="" required pattern="[A-Z]+" title="Texto con letras mayusculas A-Z ">
+                                <input type="text" class="form-control" name="apeynom_supervisor" id="apeynom_supervisor" placeholder="" required pattern="[A-Z ]+" title="Texto con letras mayusculas A-Z ">
                             </div>
                              <div class="col-3">
                                 <label for="fecha_sup">Fecha:</label>
