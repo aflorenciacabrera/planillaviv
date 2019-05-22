@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+
 
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-// Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return redirect(url('planilla/ver/' . 1));
+});
 
 Route::get('/home', function () {
-    return view('planilla.planilla');
+   return redirect(url('planilla/ver/' . 1));
 });
 
 //Route::get('/home', 'PlanillaController@planilla');
