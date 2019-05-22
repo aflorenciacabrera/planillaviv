@@ -19,10 +19,12 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
 // Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/home', function () {
     return view('planilla.planilla');
 });
-Route::get('/home', 'PlanillaController@planilla');
+
+//Route::get('/home', 'PlanillaController@planilla');
 Route::get('/planilla', 'PlanillaController@planilla')->name('planilla');
 Route::get('/planilla/ver/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
 
