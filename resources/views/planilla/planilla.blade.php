@@ -2,24 +2,39 @@
 
 @section('content')
 
+{{--  --}}
+<script>
+    function cambio(sel)
+            {
+                // alert(sel.value);
+                window.location = "{{route('planilla')}}"+"/"+sel.value
+
+            }
+
+</script>
 {{-- Alta de datos --}}
 <div class="container">
     <div class="row">
         <div class="col-12 offset-lg-0">
             <div class="card">
                 <div class="card-header d-flex justify-content-center ">
-           
+
                      <h4 >Planilla de listado de viviendas 2019</h4>
-                    
+
                            <div class="offset-lg-2">
-                               <div class="form-group row"> 
+                               <div class="form-group row">
                                     <div class="col-4">
                                     <label for="planilla"><h4> Planilla: </h4></label>
                                     </div>
                                     <div class="col-4">
-                                    <select name="planilla" id="planilla" class="form-control">
-                                        @foreach ($dato as $datos)
-                                            <option value="{{$datos->id}}">{{$datos->id}}</option>
+                                    <select name="planilla" id="planilla" class="form-control" onchange="cambio(this);">
+                                        @foreach ($filtro as $datos)
+                                            <option value="{{$datos->id}}"
+                                                @if($datos->id == $filtro_id)
+                                                    selected
+                                                @endif
+
+                                                >{{$datos->id}}</option>
                                          @endforeach
                                         </select>
                                     </div>
@@ -27,12 +42,12 @@
                                     <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
                                      </div>
                                 </div>
-                            </div>                        
-                </div>   
-        @if($dato->count())              
+                            </div>
+                </div>
+        @if($dato->count())
                  @foreach ($dato as $datos)
                 <div class="card-body" >
-                   
+
                  <div class="container">
                 <div class="row">
                     <table class="table table-bordered table-sm">
@@ -44,54 +59,54 @@
                 </tr> --}}
                 </thead>
                 <tbody>
-                
-                <tr>         
+
+                <tr>
                     <td><label for="area">Área: </label> {{$datos->area}}</td>
                     <td><label for="fraccion">Fracción: </label> {{$datos->fraccion}}</td>
-                    <td><label for="radio">Radio: </label> {{$datos->radio}}</td> 
-                    <td><label for="sub_grupo">Subgrupo: </label> {{$datos->sub_grupo}}</td> 
-                   
+                    <td><label for="radio">Radio: </label> {{$datos->radio}}</td>
+                    <td><label for="sub_grupo">Subgrupo: </label> {{$datos->sub_grupo}}</td>
+
                 </tr>
-                
+
                 </tbody>
             </table>
             <div class="pull-right">
              <a   href="{{url('/planilla/viviendas/'.$datos->id)}}" class="btn btn-info "  role ="button" > Agregar viviendas </a>
-             
+
              </div>
-            
+
 	        </div>
         </div>
-            
-                      
+
+
         <div class= "row well-sm well-md" >
-        <div class="table-responsive text-center ">   
+        <div class="table-responsive text-center ">
              <br>
             <table class="table table-bordered table-hover table-sm" id="tab_logic">
-            
+
                {{-- <table id="mytable" class="table table-bordred table-striped">                  --}}
-                   <thead>         
+                   <thead>
                         <th>Manz</th>
                         <th>Lado</th>
                          <th>N Viv. lado</th>
                         {{-- direccion --}}
                         <th>Código</th>
-                        <th >Calle</th> 
+                        <th >Calle</th>
                         <th>N° Catast.</th>
                         {{-- ------ --}}
                         <th>Manzana Interna o Sector</th>
-                        <th>Edificio Mono-Block Tira Etc</th> 
+                        <th>Edificio Mono-Block Tira Etc</th>
                         <th>Entrada o Escalera</th>
                         <th>Piso</th>
                         <th>Casa o Lote</th>
                         <th>Depto o Hab</th>
                         <th>Tipo de Viv </th>
                         <th>Descripción </th>
- 
+
                     </thead>
-                      
-                        <tbody> 
-                            
+
+                        <tbody>
+
                          @foreach($vivienda as $viviendas)
                          @if ($datos->id == $viviendas->dato_id )
                             <tr>
@@ -109,20 +124,20 @@
                                 <td>{{$viviendas->dpto_hab}}</td>
                                 <td>{{$viviendas->tipo_viv}}</td>
                                 <td>{{$viviendas->descripcion}}</td>
-                            </tr> 
+                            </tr>
                              @endif
-                            
+
                          @endforeach
-                     
+
                         </tbody>
-                          
+
                 </table>
                     <div class="d-flex  justify-content-center">
                       {!!$vivienda->links()!!}
-                    </div> 
-                                   
-        </div>      
-        
+                    </div>
+
+        </div>
+
         <div class="container">
                 <div class="row">
                     <table class="table table-bordered">
@@ -143,21 +158,21 @@
                 <td><label for="lado">Fecha:</label> {{$datos->fecha_list}}</td>
                     <td><label for="lado">Fecha:</label> {{$datos->fecha_sup}} </td>
                     <td><label for="lado">Fecha:</label> {{$datos->fecha_ing}}</td>
-                </tr>               
+                </tr>
                 </tbody>
             </table>
 	        </div>
         </div>
         @endforeach
-                    </div>       
+                    </div>
             </div>
 
-        </div> 
-           
+        </div>
+
     </div>
 </div>
 @else
-  
+
     <tr>
         <div class="text-center"><h3>No hay registrados !!</h3></div>
     </tr>
