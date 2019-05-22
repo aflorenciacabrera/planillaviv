@@ -24,7 +24,7 @@ Route::get('/home', function () {
 });
 Route::get('/home', 'PlanillaController@planilla');
 Route::get('/planilla', 'PlanillaController@planilla')->name('planilla');
-Route::get('/planilla/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
+Route::get('/planilla/ver/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
 
 Route::get('/planilla/datos', 'DatosController@datos');
 Route::post('planilla/datos', 'DatosController@crear');

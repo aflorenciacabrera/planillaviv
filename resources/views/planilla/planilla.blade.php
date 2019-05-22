@@ -7,7 +7,7 @@
     function cambio(sel)
             {
                 // alert(sel.value);
-                window.location = "{{route('planilla')}}"+"/"+sel.value
+                window.location = "{{route('planilla')}}"+"/ver/"+sel.value
 
             }
 
