@@ -162,10 +162,10 @@
                 }
             })
             
-             $('#descripcion').change(function(){
-                  $('#n_catast').attr('name','descripcion')
-                  $(this).attr('name','n_catast')
-             })
+            //  $('#descripcion').change(function(){
+            //       $('#n_catast').attr('name','descripcion')
+            //       $(this).attr('name','n_catast')
+            //  })
              
      })
 </script>
