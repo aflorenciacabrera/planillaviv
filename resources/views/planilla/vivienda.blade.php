@@ -116,7 +116,8 @@
                                 <label for="descripcion">Descripción:</label>   
                             </div> 
                             <div class="col-7">
-                               <textarea   class="form-control"name="descripcion" id="descripcion" cols="30" rows="3" pattern="[A-Zaz 0-9]+" title="Texto con letras  A-Z, a-z y 0-9"></textarea>
+                               <textarea   class="form-control"name="descripcion" id="descripcion" cols="30" rows="3" ></textarea> 
+                               {{-- pattern="[A-Zaz 0-9]+" title="Texto con letras  A-Z, a-z y 0-9" --}}
                             </div>          
                         </div> 
                        
@@ -125,12 +126,12 @@
                     <div class="card-footer  text-muted d-flex justify-content-end ">
                   
                         <div class="col-sm-10 input-column">
-                          <a href="{{ url('/planilla') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
+                          <a href="{{ url('/planilla/ver/1') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
                          </div>
                       
                            <button class="btn btn-success mr-1" type="submit">GUARDAR</button>
                    
-                           <a href="{{ url('/planilla') }}"   role ="button"   class="btn  btn-info  ">FINALIZAR</a> 
+                           <a href="{{ url('/planilla/ver/1') }}"   role ="button"   class="btn  btn-info  ">FINALIZAR</a> 
                       
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}  
                   
