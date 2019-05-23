@@ -92,7 +92,11 @@
   </div>
  
 </div>
-
+ 
+ <div class=" text-muted d-flex justify-content-end">
+<a href="{{ url('') }}"  role ="button"  class="btn  btn-info  ">Actualizar</a> 
+ </div>
+ 
                 </div>
             </div>
         </div>
