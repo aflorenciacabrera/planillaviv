@@ -86,7 +86,7 @@
                                 <label for="piso">Piso:</label>   
                             </div> 
                             <div class="col-2">
-                                <input type="number" class="form-control" name="piso" id="piso" step="1" min="0" max="10000" placeholder="" >
+                                <input type="text" class="form-control" name="piso" id="piso" placeholder="" >
                             </div> 
                             <div class="col-2">
                                 <label for="casa_lote">Casa o Lote:</label>   
