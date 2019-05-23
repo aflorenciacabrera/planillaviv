@@ -17,8 +17,6 @@ class DatosController extends Controller
        
         $d = new dato;
 
-        
-
         $d->area = $request->area;
         $d->fraccion = $request->fraccion;
         $d->radio = $request->radio;
@@ -40,5 +38,33 @@ class DatosController extends Controller
       
        
         return redirect(url('planilla/viviendas/'.$d->id ));
+    }
+
+    public function ver($id)
+    {
+        $dato = dato::where('id', $id)->get();
+        //$dato = dato::all();
+       
+        return view('encargado.planilla.editar_dato')->with('dato', $dato)->with('dato_id', $id);
+    }
+
+    public function editar(Request $request, $id){
+        $dat = dato::findOrFail($id);
+
+        $dat->area = $request->area;
+        $dat->fraccion = $request->fraccion;
+        $dat->radio = $request->radio;
+        $dat->sub_grupo = $request->sub_grupo;
+
+        // listador
+        $dat->apeynom_listador = $request->apeynom_listador;
+        $dat->fecha_list = $request->fecha_list;
+
+        // Supervisor
+        $dat->apeynom_supervisor = $request->apeynom_supervisor;
+        $dat->fecha_sup = $request->fecha_sup;
+
+        $dat->save();
+        return redirect(url( 'encargado/planilla/ver/datos/'.$id))->with('status', ' DATOS ACTUALIZADOS');
     }
 }

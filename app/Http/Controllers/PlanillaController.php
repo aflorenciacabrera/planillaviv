@@ -26,4 +26,17 @@ class PlanillaController extends Controller
         return view( 'planilla.planilla')->with('dato', $dato)->with('vivienda', $vivienda)->with('filtro',$f)->with('filtro_id',$id);
 
     }
+
+    public function verificar()
+    {
+        $dato = dato::all();
+       
+        return view('encargado.planilla.lista_planilla')->with('dato', $dato);
+
+    }
+
+    public function ver()
+    {
+        return view('encargado.planilla.editar_vivienda');
+    }
 }

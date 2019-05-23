@@ -123,7 +123,7 @@
                                 </script> 
                                   {{-- <input type="hidden" value="" class="form-control" name="fecha_ing" id="fecha_ing" placeholder="AAAA/MM/DD" required> --}}
 
-                                 <input type="hidden" name="fecha_ing" step="1" min="2013-01-01" max="2013-12-31" value="<?php echo date("Y-m-d");?>">
+                                 <input type="hidden" name="fecha_ing" step="1" min="2013-01-01" max="2050-12-31" value="<?php echo date("Y-m-d");?>">
                             </div>                                                                    
                         </div>                                                               
                     </div>

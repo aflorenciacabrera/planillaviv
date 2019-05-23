@@ -28,11 +28,16 @@ Route::get('/home', function () {
 //Route::get('/home', 'PlanillaController@planilla');
 Route::get('/planilla', 'PlanillaController@planilla')->name('planilla');
 Route::get('/planilla/ver/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
+Route::get('/planilla/verificar', 'PlanillaController@verificar');
 
 Route::get('/planilla/datos', 'DatosController@datos');
-Route::post('planilla/datos', 'DatosController@crear');
+Route::post('/planilla/datos', 'DatosController@crear');
+Route::get( '/encargado/planilla/ver/datos/{id}', 'DatosController@ver');
+Route::put('/planilla/editar/datos/{id}', 'DatosController@editar');
 
 Route::get('/planilla/viviendas/{id}', 'ViviendaController@viviendas');
-Route::post('planilla/viviendas', 'ViviendaController@crear');
+Route::post('/planilla/viviendas', 'ViviendaController@crear');
+Route::get( '/encargado/planilla/ver/viviendas/{id}', 'ViviendaController@ver');
+Route::put('/planilla/editar/vivienda/', 'ViviendaController@editar');
 
 });
