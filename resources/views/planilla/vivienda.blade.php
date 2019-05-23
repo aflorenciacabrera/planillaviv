@@ -51,7 +51,7 @@
                                 <label for="calle">Calle:</label>
                             </div>
                             <div class="col-2">
-                                <input type="text" class="form-control" name="calle" id="calle" placeholder="" required pattern="[A-Z 0-9]+" title="Texto con letras mayusculas A-Z y 0-9">
+                                <input type="text" class="form-control" name="calle" id="calle" placeholder="" required pattern="[A-Z 0-9 .]+" title="Texto con letras mayusculas A-Z y 0-9">
                             </div> 
                              <div class="col-2">
                                 <label for="n_catast">N° Catast:</label>
