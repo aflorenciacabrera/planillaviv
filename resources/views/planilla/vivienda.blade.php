@@ -16,7 +16,6 @@
                 <div class="card-body" >
                         @csrf
                     <div class="offset-lg-1">
-
                         <div class="form-group row"> 
                             <input  type="hidden"  value="{{$dato}}" class="form-control" name="dato_id" id="dato_id" placeholder="" >
                              <div class="col-1">

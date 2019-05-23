@@ -37,9 +37,11 @@ class ViviendaController extends Controller
 
         return redirect(url('planilla/viviendas/'.$v->dato_id));
     }
-    public function ver()
+    public function ver($id)
     {
+        $dato = dato::where('id', $id)->get();
         $vivienda = vivienda::all();
-        return view('encargado.planilla.editar_vivienda')->with('vivienda', $vivienda);
+        return view('encargado.planilla.editar_vivienda')->with('vivienda', $vivienda)->with('dato', $dato)->with('dato_id',$id);
     }
+  
 }

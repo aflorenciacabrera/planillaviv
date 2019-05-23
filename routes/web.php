@@ -38,7 +38,6 @@ Route::put('/planilla/editar/datos/{id}', 'DatosController@editar');
 Route::get('/planilla/viviendas/{id}', 'ViviendaController@viviendas');
 Route::post('/planilla/viviendas', 'ViviendaController@crear');
 Route::get( '/encargado/planilla/ver/viviendas/{id}', 'ViviendaController@ver');
-Route::put('/planilla/editar/vivienda/{id}', 'ViviendaController@editar');
-
+Route::put('/planilla/editar/vivienda/', 'ViviendaController@editar');
 
 });

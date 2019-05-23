@@ -59,7 +59,7 @@
               <a   href="{{url('encargado/planilla/ver/datos/'.$datos->id)}}" class="btn btn-primary"  role ="button" > Ver</a>    
             </td>
             <td>
-              <a   href="{{url('encargado/planilla/ver/viviendas')}}" class="btn btn-info"  role ="button" >ver </a>
+              <a   href="{{url('encargado/planilla/ver/viviendas/'.$datos->id)}}" class="btn btn-info"  role ="button" >ver </a>
             </td>
           </tr>
         </tbody>

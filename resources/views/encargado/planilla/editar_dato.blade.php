@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-14">
             <div class="card">
-                <div class="card-header">Lista de datos </div>
+                <div class="card-header">Modificar Datos de la planilla </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+ <form method="POST" action="{{url('planilla/editar/datos/'.$dato_id)}}" >
+    {{ csrf_field() }}
+  {{ method_field('PUT') }}    
         
  <div class="container">
     <div class="row clearfix">
@@ -51,7 +53,7 @@
          </tr>
         </thead>
          @foreach ($dato as $datos)
-         
+ 
         <tbody>
         <tr class="text-center" >
             <td>
@@ -90,13 +92,15 @@
       </table>
     </div>
   </div>
- 
 </div>
  
  <div class=" text-muted d-flex justify-content-end">
-<a href="{{ url('') }}"  role ="button"  class="btn  btn-info  ">Actualizar</a> 
+   <div class="col-sm-11 input-column">
+    <a href="{{ url('/planilla/verificar') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
+                         </div>
+    <button type="submit" class="btn  btn-info  ">ACTUALIZAR</button> 
  </div>
- 
+ </form>
                 </div>
             </div>
         </div>
