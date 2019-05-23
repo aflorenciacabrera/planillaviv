@@ -51,7 +51,7 @@
 
                  <div class="container">
                 <div class="row">
-                    <table class="table table-bordered table-sm">
+                <table class="table table-bordered table-sm">
                 <thead>
                 {{-- <tr>
                     <th>Firstname</th>

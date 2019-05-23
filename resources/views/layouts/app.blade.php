@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> ECV: Encuesta de calidad de vida</title>
+    <title> ECV</title>
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
 
     <!-- Scripts -->
@@ -20,6 +20,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --}}
+{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+
 </head>
 <body>
     <div id="app">
@@ -63,8 +68,32 @@
                                 <a   href="{{url('/planilla/viviendas')}}" class="nav-link"  role ="button" >
                                 <i class="fa fa-home"></i> Viviendas </a>
                             </li> --}}
+                            @if(Auth::user()->hasRole('admin'))
 
+                            @elseif(Auth::user()->hasRole('encargado'))
+                              <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('/planilla/verificar') }}">
+                                     Verificar Planillas
+                                    </a>
+                                  
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Salir') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @elseif(Auth::user()->hasRole('listador'))
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -82,6 +111,7 @@
                                     </form>
                                 </div>
                             </li>
+                            @endif
                         @endguest
                     </ul>
                 </div>

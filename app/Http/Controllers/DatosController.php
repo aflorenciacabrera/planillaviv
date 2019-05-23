@@ -41,4 +41,12 @@ class DatosController extends Controller
        
         return redirect(url('planilla/viviendas/'.$d->id ));
     }
+
+    public function ver($id)
+    {
+        $dato = dato::where('id', $id)->get();
+        //$dato = dato::all();
+       
+        return view('encargado.planilla.editar_dato')->with('dato', $dato)->with('dato_id', $id);
+    }
 }
