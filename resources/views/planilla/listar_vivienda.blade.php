@@ -81,9 +81,9 @@
                                 <td>{{$viviendas->tipo_viv}}</td>
                                 <td>{{$viviendas->descripcion}}</td>
                                 <td> <a   href="{{url('planilla/editar/vivienda/'.$viviendas->id)}}" class="btn btn-primary"  role ="button" ><i class="fa fa-edit"></i></a> </td>
-                                <td> <a   href="{{url('#')}}" class="btn btn-danger"  role ="button" > <i class="fa fa-trash-o"></i></a> </td>
+                               
+                                <td><a href="#delete{{ $viviendas->id }}"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger " data-toggle="modal" role ="button" >   <i class="fa fa-trash-o"></i></a></td>
                             </tr>
-                         
                                @endif
                          @endforeach
                         </tbody>
@@ -99,4 +99,32 @@
 </div>
 </div>
 
+ {{-- ***********************Modal de Delete********************************* --}}
+   @foreach($vivienda as $viviendas)
+                <div class="modal fade" id="delete{{ $viviendas->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h4 class="modal-title custom_align" id="Heading">Eliminar Edificio</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Está seguro que desea Eliminar esta vivienda?</div> 
+                        </div>
+                        <div class="modal-footer ">
+                        <form method="post" action="{{ url('planilla/eliminar/vivienda/'.$viviendas->id) }}">
+                                                                        {{ csrf_field() }}
+                                                                        {{ method_field('DELETE') }}
+                                                                     @csrf
+                                                   
+                                                
+                            <button  class="btn btn-danger"  type="submit"><span class="fa fa-ok-sign"></span>Si</button></form> 
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="fa fa-remove"></span> No</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content --> 
+                </div>
+                    <!-- /.modal-dialog --> 
+                </div>
+ @endforeach
 @endsection

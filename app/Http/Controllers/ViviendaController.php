@@ -73,5 +73,11 @@ class ViviendaController extends Controller
         $viv->save();
         return redirect(url('planilla/ver/viviendas/'.$viv->dato_id))->with('status', ' VIVIVENDA ACTUALIZADA');
     }
+
+    public function delete(Request $request, $id){
+        $viv = vivienda::findOrFail($id);
+        $viv->delete();
+        return redirect(url( 'planilla/ver/viviendas/' . $viv->dato_id))->with( 'danger', 'LA VIVIENDA FUE ELIMINADA ');
+    }
   
 }
