@@ -29,11 +29,8 @@ class PlanillaController extends Controller
         return view('planilla.lista_planilla')->with('dato', $dato);
 
     }
-    public function ver()
-    {
-        return view('planilla.editar_vivienda');
-    }
-
+    
+   
     public function lista()
     {
         $dato = dato::all();

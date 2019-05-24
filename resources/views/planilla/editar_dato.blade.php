@@ -16,7 +16,7 @@
  <form method="POST" action="{{url('planilla/editar/datos/'.$dato_id)}}" >
     {{ csrf_field() }}
   {{ method_field('PUT') }}    
-        
+        @csrf
  <div class="container">
     <div class="row clearfix">
     <div class="col-md-13 column">

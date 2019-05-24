@@ -41,12 +41,19 @@ class ViviendaController extends Controller
     {
         $dato = dato::where('id', $id)->get();
         $vivienda = vivienda::all();
-        return view('planilla.editar_vivienda')->with('vivienda', $vivienda)->with('dato', $dato)->with('dato_id',$id);
+        return view('planilla.listar_vivienda')->with('vivienda', $vivienda)->with('dato', $dato)->with('dato_id',$id);
     }
 
-    public function editar(Request $request, $id)
+    public function editar($id)
     {
-        $viv = dato::findOrFail($id);
+        $vivienda = vivienda::findOrFail($id);
+
+        return view('planilla.editar_vivienda', array( "vivienda" => $vivienda));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $viv = vivienda::findOrFail($id);
         $viv->dato_id = $request->dato_id;
         $viv->manz = $request->manz;
         $viv->lado = $request->lado++;
