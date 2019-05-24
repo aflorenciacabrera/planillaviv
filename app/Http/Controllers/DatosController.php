@@ -45,10 +45,18 @@ class DatosController extends Controller
         $dato = dato::where('id', $id)->get();
         //$dato = dato::all();
        
-        return view('planilla.editar_dato')->with('dato', $dato)->with('dato_id', $id);
+        return view('planilla.ver_dato')->with('dato', $dato)->with('dato_id', $id);
     }
 
-    public function editar(Request $request, $id){
+    public function editar($id)
+    {
+        $dato = dato::findOrFail($id);
+
+        return view('planilla.editar_dato', array( "dato" => $dato));
+    }
+
+
+    public function update(Request $request, $id){
         $dat = dato::findOrFail($id);
 
         $dat->area = $request->area;
@@ -66,5 +74,11 @@ class DatosController extends Controller
 
         $dat->save();
         return redirect(url( 'planilla/ver/datos/'.$id))->with('status', ' DATOS ACTUALIZADOS');
+    }
+    public function delete(Request $request, $id)
+    {
+        $dat = dato::findOrFail($id);
+        $dat->delete();
+        return redirect(url( 'planilla/verificar'))->with('danger', 'LA PLANILLA FUE ELIMINADA ');
     }
 }

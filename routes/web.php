@@ -34,7 +34,9 @@ Route::get('/planilla/verificar', 'PlanillaController@verificar');
 Route::get('/planilla/datos', 'DatosController@datos');
 Route::post('/planilla/datos', 'DatosController@crear');
 Route::get( '/planilla/ver/datos/{id}', 'DatosController@ver');
-Route::put('/planilla/editar/datos/{id}', 'DatosController@editar');
+Route::get('/planilla/editar/datos/{id}', 'DatosController@editar');
+Route::put( '/planilla/editar/datos/{id}', 'DatosController@update');
+Route::DELETE( '/planilla/eliminar/datos/{id}', 'DatosController@delete');
 
 Route::get('/planilla/viviendas/{id}', 'ViviendaController@viviendas');
 Route::post('/planilla/viviendas', 'ViviendaController@crear');
