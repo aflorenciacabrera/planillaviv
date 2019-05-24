@@ -40,13 +40,16 @@
             </th>
           </tr>
         </thead>
+       {{-- @if( ($dato->count(Auth::user()->name)) ) --}}
         @foreach ($dato as $datos)
+          
         <tbody class ="text-center">
         <tr>
             <td>
               {{$datos->id}}
             </td>
             <td> 
+             
               {{$datos->apeynom_ingresador}}          
             </td>
             <td> 
@@ -59,9 +62,9 @@
             <td>
               <a   href="{{url('/planilla/ver/viviendas/'.$datos->id)}}" class="btn btn-info"  role ="button" >ver </a>
             </td>
-          </tr>
-        </tbody>
+            
          @endforeach
+         
       </table>
     </div>
   </div>

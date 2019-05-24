@@ -19,7 +19,7 @@
         @csrf
  <div class="container">
     <div class="row clearfix">
-    <div class="col-md-13 column">
+    <div class="col-md-12 column">
       <table class="table table-bordered table-hover" >
         <thead>
           <tr class="text-center">
@@ -51,15 +51,15 @@
                Fecha
             </th>
          </tr>
+
+         
         </thead>
          @foreach ($dato as $datos)
- 
         <tbody>
         <tr class="text-center" >
             <td>
              {{$datos->id}}
             </td>
-           
             <td>
            {{$datos->area}}"
             </td>
@@ -84,10 +84,10 @@
             <td>
              {{$datos->fecha_sup}}
             </td>
-            
           </tr>
         </tbody>
-       
+
+        
          @endforeach
       </table>
     </div>
@@ -95,12 +95,12 @@
 </div>
  
  <div class=" text-muted d-flex justify-content-end">
-   <div class="col-sm-11 input-column">
-      <a   href="{{url('/planilla/verificar')}}" class="btn btn-primary"  role ="button" > Ver</a>   
+   <div class="col-sm-9 input-column">
+      <a   href="{{url('/planilla/verificar')}}" class="btn btn-primary"  role ="button" > VOLVER</a>   
     {{-- <a href="{{ url('/planilla/verificar') }}"  role ="button"  class="btn  btn-primary  ">Volver</a>  --}}
                          </div>
-    <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info mr-1 ">editar</a> 
-     <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Eliminar</a> 
+    <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info mr-1 ">EDITAR</a> 
+     <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">ELIMINAR</a> 
     {{-- <button type="submit" class="btn  btn-info  ">ACTUALIZAR</button>  --}}
  </div>
  </form>
