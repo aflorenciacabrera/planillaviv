@@ -20,7 +20,6 @@
       <table class="table table-bordered table-hover" >
         <thead>
           <tr class="text-center">
-           
             <th >
               Área
             </th>
@@ -46,13 +45,10 @@
                Fecha
             </th>
          </tr>
-
-         
         </thead>
          @foreach ($dato as $datos)
         <tbody>
         <tr class="text-center" >
-            
             <td>
            {{$datos->area}}"
             </td>

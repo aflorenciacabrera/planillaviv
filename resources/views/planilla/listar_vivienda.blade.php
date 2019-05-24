@@ -91,8 +91,16 @@
   @endforeach
         </div>
                     </div>
-            </div>
 
+            </div>
+                     <div class="card-footer  text-muted d-flex justify-content-end ">
+                  
+                        <div class="col-sm-12 input-column">
+                          <a href="{{ url('/planilla/verificar') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">VOLVER</a> 
+                         </div>
+                      
+                   
+                    </div>
         </div>
 
     </div>
