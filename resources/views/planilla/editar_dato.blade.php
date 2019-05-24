@@ -61,28 +61,28 @@
             </td>
            
             <td>
-            <input type="number" class="form-control" name="area" id="area" step="1" min="0" max="10000"  value="{{$datos->area}}">
+           {{$datos->area}}"
             </td>
             <td>
-            <input type="number" class="form-control" name="fraccion" id="fraccion" step="1" min="0" max="10000" value="{{$datos->fraccion}}">
+            {{$datos->fraccion}}"
             </td>
              <td>
-            <input type="number" class="form-control" name="radio" id="radio" step="1" min="0" max="10000" value="{{$datos->radio}}">
+           {{$datos->radio}}"
             </td>
             <td>
-            <input type="number" class="form-control" name="sub_grupo" id="sub_grupo" step="1" min="0" max="10000" value="{{$datos->sub_grupo}}">
+           {{$datos->sub_grupo}}
             </td>
             <td>
-              <input type="text" class="form-control" name="apeynom_listador" id="apeynom_listador" value="{{$datos->apeynom_listador}}" pattern="[A-Z ]+" title="Texto con letras mayusculas A-Z ">
+              {{$datos->apeynom_listador}}
             </td>
             <td>
-               <input type="date" class="form-control" name="fecha_list" id="fecha_list" value="{{$datos->fecha_list}}">
+               {{$datos->fecha_list}}
             </td>
             <td>
-              <input type="text" class="form-control" name="apeynom_supervisor" id="apeynom_supervisor" value="{{$datos->apeynom_supervisor}}" pattern="[A-Z ]+" title="Texto con letras mayusculas A-Z ">
+             {{$datos->apeynom_supervisor}}
             </td>
             <td>
-              <input type="date" class="form-control" name="fecha_sup" id="fecha_sup" value="{{$datos->fecha_sup}}">
+             {{$datos->fecha_sup}}
             </td>
             
           </tr>
@@ -96,9 +96,12 @@
  
  <div class=" text-muted d-flex justify-content-end">
    <div class="col-sm-11 input-column">
-    <a href="{{ url('/planilla/verificar') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
+      <a   href="{{url('/planilla/verificar')}}" class="btn btn-primary"  role ="button" > Ver</a>   
+    {{-- <a href="{{ url('/planilla/verificar') }}"  role ="button"  class="btn  btn-primary  ">Volver</a>  --}}
                          </div>
-    <button type="submit" class="btn  btn-info  ">ACTUALIZAR</button> 
+    <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info mr-1 ">editar</a> 
+     <a href="{{ url('#') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Eliminar</a> 
+    {{-- <button type="submit" class="btn  btn-info  ">ACTUALIZAR</button>  --}}
  </div>
  </form>
                 </div>

@@ -128,9 +128,9 @@
                           <a href="{{ url('/planilla/ver/1') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
                          </div>
                       
-                           <button class="btn btn-success mr-1" type="submit">GUARDAR</button>
+                           <button class="btn btn-success " type="submit">GUARDAR</button>
                    
-                           <a href="{{ url('/planilla/ver/1') }}"   role ="button"   class="btn  btn-info  ">FINALIZAR</a> 
+                           {{-- <a href="{{ url('/planilla/ver/1') }}"   role ="button"   class="btn  btn-info  ">FINALIZAR</a>  --}}
                       
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}  
                   
