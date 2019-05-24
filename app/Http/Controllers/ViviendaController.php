@@ -71,7 +71,7 @@ class ViviendaController extends Controller
         $viv->descripcion = $request->descripcion;
 
         $viv->save();
-        return redirect(url('planilla/ver/viviendas/'.$viv->dato_id))->with('status', ' VIVIVENDAS ACTUALIZADOS');
+        return redirect(url('planilla/ver/viviendas/'.$viv->dato_id))->with('status', ' VIVIVENDA ACTUALIZADA');
     }
   
 }

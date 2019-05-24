@@ -23,9 +23,7 @@
         
         <thead class="bg-light">
           <tr >
-            <th class="text-center">
-              N°
-            </th>
+           
             <th class="text-center">
              Usuario
             </th>
@@ -45,9 +43,7 @@
           
         <tbody class ="text-center">
         <tr>
-            <td>
-              {{$datos->id}}
-            </td>
+            
             <td> 
              
               {{$datos->apeynom_ingresador}}          

@@ -23,9 +23,7 @@
       <table class="table table-bordered table-hover" >
         <thead>
           <tr class="text-center">
-            <th >
-              N°
-            </th>
+           
             <th >
               Área
             </th>
@@ -57,9 +55,7 @@
          @foreach ($dato as $datos)
         <tbody>
         <tr class="text-center" >
-            <td>
-             {{$datos->id}}
-            </td>
+            
             <td>
            {{$datos->area}}"
             </td>

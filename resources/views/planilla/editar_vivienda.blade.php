@@ -14,11 +14,7 @@
   {{ method_field('PUT') }} 
            @csrf
                 <div class="card-body" >
-                      @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                     @endif
+                    
                     <div class="offset-lg-1">
                         <div class="form-group row"> 
                             <input  type="hidden"  value="{{$vivienda->dato_id}}" class="form-control" name="dato_id" id="dato_id" placeholder="" >

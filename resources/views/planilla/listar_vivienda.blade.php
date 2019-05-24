@@ -14,7 +14,11 @@
                 </div>
                 
                 <div class="card-body" >
-
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                     @endif
                  <div class="container">
                 <div class="row">
      
@@ -34,7 +38,7 @@
 
                {{-- <table id="mytable" class="table table-bordred table-striped">                  --}}
                    <thead>
-                        <th>Nº</th>
+                        
                         <th>Manz</th>
                         <th>Lado</th>
                          <th>N° Viv. lado</th>
@@ -61,7 +65,7 @@
                          @foreach($vivienda as $viviendas)
                          @if ($datos->id == $viviendas->dato_id )
                             <tr>
-                                <td>{{$viviendas->id}}</td>
+                                
                                 <td>{{$viviendas->manz}}</td>
                                 <td>{{$viviendas->lado}}</td>
                                 <td>{{$viviendas->n_viv_listado}}</td>
