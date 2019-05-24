@@ -45,7 +45,7 @@ class DatosController extends Controller
         $dato = dato::where('id', $id)->get();
         //$dato = dato::all();
        
-        return view('encargado.planilla.editar_dato')->with('dato', $dato)->with('dato_id', $id);
+        return view('planilla.editar_dato')->with('dato', $dato)->with('dato_id', $id);
     }
 
     public function editar(Request $request, $id){
@@ -65,6 +65,6 @@ class DatosController extends Controller
         $dat->fecha_sup = $request->fecha_sup;
 
         $dat->save();
-        return redirect(url( 'encargado/planilla/ver/datos/'.$id))->with('status', ' DATOS ACTUALIZADOS');
+        return redirect(url( 'planilla/ver/datos/'.$id))->with('status', ' DATOS ACTUALIZADOS');
     }
 }

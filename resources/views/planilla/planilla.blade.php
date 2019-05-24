@@ -7,13 +7,11 @@
     function cambio(sel)
             {
                 // alert(sel.value);
-                 window.location = "{{route('planilla')}}"+"/ver/"+sel.value
-                
+                 window.location = "{{route('planilla')}}"+"/ver/"+sel.value    
 
             }
-
 </script>
-{{-- Alta de datos --}}
+{{--Muestra de planillas por filtro de id datos --}}
 <div class="container">
     <div class="row">
         <div class="col-12 offset-lg-0">
@@ -127,11 +125,8 @@
                                 <td>{{$viviendas->descripcion}}</td>
                             </tr>
                              @endif
-
                          @endforeach
-
                         </tbody>
-
                 </table>
                     <div class="d-flex  justify-content-center">
                       {!!$vivienda->links()!!}
