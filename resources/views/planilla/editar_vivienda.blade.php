@@ -8,16 +8,17 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-center">
                     <h4 >Planilla de listado de viviendas 2019</h4>
-                    
                 </div>
-              
-                   
 <form method="POST" action="{{url('planilla/editar/vivienda/'.$vivienda->id)}}" >
     {{ csrf_field() }}
   {{ method_field('PUT') }} 
            @csrf
                 <div class="card-body" >
-                      
+                      @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                     @endif
                     <div class="offset-lg-1">
                         <div class="form-group row"> 
                             <input  type="hidden"  value="{{$vivienda->dato_id}}" class="form-control" name="dato_id" id="dato_id" placeholder="" >
@@ -131,7 +132,7 @@
                           <a href="{{ url('/planilla/ver/viviendas/'. $vivienda->dato_id) }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">CANCELAR</a> 
                          </div>
                       
-                           <button class="btn btn-success mr-1" type="submit">GUARDAR</button>
+                           <button class="btn btn-info mr-1" type="submit">ACTUALIZAR</button>
                    
                     </div>
                </form>
