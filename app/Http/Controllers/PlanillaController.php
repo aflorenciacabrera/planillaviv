@@ -11,7 +11,7 @@ class PlanillaController extends Controller
     public function planilla()
     {
         $dato = dato::all();
-        $vivienda = vivienda::orderBy('id', 'asc')->paginate(10);
+        $vivienda = vivienda::orderBy('id', 'asc');
 
         return view( 'planilla.planilla')->with('dato', $dato)->with('vivienda', $vivienda)->with('filtro',$dato)->with('filtro_id',1);
     }
@@ -19,7 +19,7 @@ class PlanillaController extends Controller
     {
         $dato = dato::where('id',$id)->get();
         $f = dato::all();
-        $vivienda = vivienda::orderBy('id', 'asc')->paginate(10);
+        $vivienda = vivienda::orderBy('id', 'asc');
         return view( 'planilla.planilla')->with('dato', $dato)->with('vivienda', $vivienda)->with('filtro',$f)->with('filtro_id',$id);
 
     }
