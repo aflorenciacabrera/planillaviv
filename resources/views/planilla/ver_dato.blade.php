@@ -44,6 +44,12 @@
            <th>
                Fecha
             </th>
+             <th>
+              Ingresador
+            </th>
+           <th>
+               Fecha
+            </th>
          </tr>
         </thead>
          @foreach ($dato as $datos)
@@ -65,13 +71,19 @@
               {{$datos->apeynom_listador}}
             </td>
             <td>
-               {{$datos->fecha_list}}
+              {{date('d-m-Y', strtotime($datos->fecha_list))}}  
             </td>
             <td>
              {{$datos->apeynom_supervisor}}
             </td>
             <td>
-             {{$datos->fecha_sup}}
+             {{date('d-m-Y', strtotime($datos->fecha_sup))}}  
+            </td>
+            <td>
+             {{$datos->apeynom_ingresador}}
+            </td>
+            <td>
+             {{date('d-m-Y', strtotime($datos->fecha_ing))}}  
             </td>
           </tr>
         </tbody>

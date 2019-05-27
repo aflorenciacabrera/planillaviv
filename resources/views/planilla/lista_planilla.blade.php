@@ -31,9 +31,19 @@
       <table class="table  table-bordered  " width="100%">
         
         <thead class="bg-light">
-          <tr >
-            <th class="text-center">
-             Usuario
+          <tr class="text-center" >
+            {{-- <th>N°</th> --}}
+            <th >
+              Área
+            </th>
+            <th >
+              Fracción
+            </th>
+            <th >
+              Radio
+            </th>
+            <th>
+              Subgrupo
             </th>
             <th class="text-center">
              Fecha de carga
@@ -54,14 +64,22 @@
           
         <tbody class ="text-center">
         <tr>
-            
-            <td>  
-              {{$datos->apeynom_ingresador}}          
+        {{-- <td>{{$datos->id}}</td> --}}
+             <td>
+           {{$datos->area}}"
+            </td>
+            <td>
+            {{$datos->fraccion}}"
+            </td>
+             <td>
+           {{$datos->radio}}"
+            </td>
+            <td>
+           {{$datos->sub_grupo}}
             </td>
             <td> 
-               {{$datos->fecha_ing}}        
+              {{date('d-m-Y', strtotime($datos->fecha_ing))}}       
             </td>
-           
             <td>  
               <a   href="{{url('/planilla/ver/datos/'.$datos->id)}}" class="btn btn-primary"  role ="button" > Ver</a>   
             </td>
