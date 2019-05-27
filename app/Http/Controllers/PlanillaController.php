@@ -27,9 +27,20 @@ class PlanillaController extends Controller
     }
     public function verificar()
     {
-        //$dato = dato::all();
-        $dato = dato::where( 'apeynom_ingresador', Auth::user()->name)->get();
-        return view('planilla.lista_planilla')->with('dato', $dato);
+        if (Auth::user()->hasRole('admin')) {
+            $dato = dato::all();
+            return view('planilla.lista_planilla')->with('dato', $dato);
+        }
+        if (Auth::user()->hasRole('encargado')) {
+            $dato = dato::all();
+            return view('planilla.lista_planilla')->with('dato', $dato);
+        }
+        if (Auth::user()->hasRole('ingresador')) {
+            $dato = dato::where('apeynom_ingresador', Auth::user()->name)->get();
+            return view('planilla.lista_planilla')->with('dato', $dato);
+        }
+
+       
 
     }
     

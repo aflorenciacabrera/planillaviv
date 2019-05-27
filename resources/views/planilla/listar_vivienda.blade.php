@@ -32,13 +32,13 @@
         </div>
 
 
-        <div class= "row well-sm well-md" >
-        <div class="table-responsive text-center ">
+        <div class= "row " >
+        <div class="col-md-12 column table-responsive ">
              <br>
-            <table class="table table-bordered table-hover table-sm" id="tab_logic">
+            <table class="table  table-bordered table-sm" width="100%">
 
                {{-- <table id="mytable" class="table table-bordred table-striped">                  --}}
-                   <thead>
+                   <thead class="bg-light">
                         
                         <th>Manz</th>
                         <th>Lado</th>

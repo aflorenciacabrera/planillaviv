@@ -70,7 +70,27 @@
                                 <i class="fa fa-home"></i> Viviendas </a>
                             </li> --}}
                             @if(Auth::user()->hasRole('admin'))
+                            <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
+                           
+                            <li class="nav-item border">  
+                                <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
+                                Verificar Planillas </a> 
+                            </li>
+                             <li class="nav-item border">  
+                                <a   href="{{url('planilla/datos')}}" class="nav-link"  role ="button" >
+                               Nueva Planillas </a> 
+                            </li>
+                           
+                            <li class="nav-item border"> <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off"></i> {{ __('Salir') }}
+                                    </a>
 
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+                              
                             @elseif(Auth::user()->hasRole('encargado'))
                              <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
                             {{-- <li class="nav-item border ">  
@@ -131,7 +151,7 @@
                                 <i class="fa fa-home"></i> Inicio </a> 
                             </li> --}}
                             <li class="nav-item border">  
-                                <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
+                                <a   href="{{url('planilla/verificar')}}" class="nav-link "  role ="button" >
                                 Verificar Planillas </a> 
                             </li>
                              <li class="nav-item border">  

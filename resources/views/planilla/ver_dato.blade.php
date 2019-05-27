@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-14">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header"> Datos de la planilla </div>
 
@@ -15,10 +15,10 @@
                     @endif
  
  <div class="container">
-    <div class="row clearfix">
-    <div class="col-md-12 column">
-      <table class="table table-bordered table-hover" >
-        <thead>
+    <div class="row ">
+    <div class="col-md-12 column table-responsive">
+      <table class="table  table-bordered  table-sm" width="100%" >
+        <thead class="bg-light">
           <tr class="text-center">
             <th >
               Área
