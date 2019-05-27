@@ -85,10 +85,10 @@
                                 <a   href="{{url('planilla/datos')}}" class="nav-link"  role ="button" >
                                Nueva Planillas </a> 
                             </li>
-                            <li class="nav-item border">  
+                            {{-- <li class="nav-item border">  
                                 <a   href="{{url('/encargado/ingresador/lista')}}" class="nav-link"  role ="button" >
                                  Ingresadores </a> 
-                            </li>
+                            </li> --}}
                            
                             <li class="nav-item border"> <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
