@@ -31,7 +31,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/planilla/ver/1') }}">
+                <a class="navbar-brand" href="{{ url('/planilla/verificar') }}">
                     <label for="">ECV:</label> <font face="Britannic Bold" size="4"><i><span>Encuesta de Calidad de Vida  </i> </span></font>  {{-- {{ config('app.name', 'Laravel') }} --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -73,10 +73,10 @@
 
                             @elseif(Auth::user()->hasRole('encargado'))
                              <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
-                            <li class="nav-item border ">  
+                            {{-- <li class="nav-item border ">  
                                 <a   href="{{url('/')}}" class="nav-link "  role ="button" >
                                 <i class="fa fa-home"></i> Inicio </a> 
-                            </li>
+                            </li> --}}
                             <li class="nav-item border">  
                                 <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
                                 Verificar Planillas </a> 
@@ -126,10 +126,10 @@
                             </li> --}}
                             @elseif(Auth::user()->hasRole('ingresador'))
                             <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
-                            <li class="nav-item border ">  
+                            {{-- <li class="nav-item border ">  
                                 <a   href="{{url('/')}}" class="nav-link "  role ="button" >
                                 <i class="fa fa-home"></i> Inicio </a> 
-                            </li>
+                            </li> --}}
                             <li class="nav-item border">  
                                 <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
                                 Verificar Planillas </a> 
