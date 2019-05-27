@@ -45,7 +45,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto ">
                         <!-- Authentication Links -->
                         @guest
                             {{-- <li class="nav-item">
@@ -72,7 +72,34 @@
                             @if(Auth::user()->hasRole('admin'))
 
                             @elseif(Auth::user()->hasRole('encargado'))
-                              <li class="nav-item dropdown">
+                             <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
+                            <li class="nav-item border ">  
+                                <a   href="{{url('/')}}" class="nav-link "  role ="button" >
+                                <i class="fa fa-home"></i> Inicio </a> 
+                            </li>
+                            <li class="nav-item border">  
+                                <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
+                                Verificar Planillas </a> 
+                            </li>
+                             <li class="nav-item border">  
+                                <a   href="{{url('planilla/datos')}}" class="nav-link"  role ="button" >
+                               Nueva Planillas </a> 
+                            </li>
+                            <li class="nav-item border">  
+                                <a   href="{{url('/encargado/ingresador/lista')}}" class="nav-link"  role ="button" >
+                                 Ingresadores </a> 
+                            </li>
+                           
+                            <li class="nav-item border"> <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off"></i> {{ __('Salir') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+                              {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -96,9 +123,33 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                             @elseif(Auth::user()->hasRole('ingresador'))
-                            <li class="nav-item dropdown">
+                            <li class="nav-item ">  <label for="name" class="nav-link">{{ Auth::user()->name }}</label>  </li>
+                            <li class="nav-item border ">  
+                                <a   href="{{url('/')}}" class="nav-link "  role ="button" >
+                                <i class="fa fa-home"></i> Inicio </a> 
+                            </li>
+                            <li class="nav-item border">  
+                                <a   href="{{url('planilla/verificar')}}" class="nav-link"  role ="button" >
+                                Verificar Planillas </a> 
+                            </li>
+                             <li class="nav-item border">  
+                                <a   href="{{url('planilla/datos')}}" class="nav-link"  role ="button" >
+                               Nueva Planillas </a> 
+                            </li>
+                            
+                           
+                            <li class="nav-item border"> <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off"></i> {{ __('Salir') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+                            {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -121,7 +172,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                             @endif
                         @endguest
                     </ul>

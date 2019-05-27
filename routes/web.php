@@ -44,4 +44,6 @@ Route::get( '/planilla/ver/viviendas/{id}', 'ViviendaController@ver');
 Route::get('/planilla/editar/vivienda/{id}', 'ViviendaController@editar');
 Route::put('/planilla/editar/vivienda/{id}', 'ViviendaController@update');
 Route::DELETE('/planilla/eliminar/vivienda/{id}', 'ViviendaController@delete');
+
+Route::get('encargado/ingresador/lista','EncargadoController@lista');
 });

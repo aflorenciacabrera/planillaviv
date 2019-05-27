@@ -24,6 +24,7 @@
      
             <div class="pull-right">
              <a   href="{{url('/planilla/viviendas/'.$datos->id)}}" class="btn btn-info "  role ="button" > Agregar viviendas </a>
+             <a   href="{{url('/planilla/ver/datos/'.$datos->id)}}" class="btn btn-primary"  role ="button" > Ver Datos</a>
 
              </div>
 
