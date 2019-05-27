@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'planilla/ver/1';
+    protected $redirectTo = 'planilla/verificar';
 
     /**
      * Create a new controller instance.

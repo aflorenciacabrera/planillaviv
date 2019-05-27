@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\dato;
 use App\vivienda;
+use Illuminate\Support\Facades\Auth;
+
 class PlanillaController extends Controller
 {
     //
@@ -25,7 +27,8 @@ class PlanillaController extends Controller
     }
     public function verificar()
     {
-        $dato = dato::all();
+        //$dato = dato::all();
+        $dato = dato::where( 'apeynom_ingresador', Auth::user()->name)->get();
         return view('planilla.lista_planilla')->with('dato', $dato);
 
     }

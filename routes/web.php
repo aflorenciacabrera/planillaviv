@@ -18,16 +18,16 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
-    return redirect(url('planilla/ver/' . 1));
+    return redirect(url('planilla/verificar'));
 });
 
 Route::get('/home', function () {
-   return redirect(url('planilla/ver/' . 1));
+   return redirect(url('planilla/verifcar'));
 });
 
 //Route::get('/home', 'PlanillaController@planilla');
-Route::get('/planilla', 'PlanillaController@planilla')->name('planilla');
-Route::get('/planilla/ver/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
+//Route::get('/planilla', 'PlanillaController@planilla')->name('planilla');
+//Route::get('/planilla/ver/{id}', 'PlanillaController@planillaFiltro')->name('planillaFiltro');
 Route::get('planilla/lista','PlanillaController@lista');
 Route::get('/planilla/verificar', 'PlanillaController@verificar');
 

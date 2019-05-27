@@ -6,7 +6,17 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Lista de Planillas </div>
+                <div class="card-header"> 
+
+                            <div class="offset-lg-0">
+                               <div class="form-group row">
+                                 <h3> Lista de Planillas </h3> 
+                                     <div class="offset-lg-8 ">
+                                    <a   href="{{url('/planilla/datos')}}" class="btn btn-primary"  role ="button" > Nueva Planilla </a>
+                                     </div>
+                                </div>
+                            </div>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +25,6 @@
                         </div>
                     @endif
 
-        
  <div class="container">
     <div class="row ">
     <div class="col-md-12 column table-responsive">
@@ -23,7 +32,6 @@
         
         <thead class="bg-light">
           <tr >
-           
             <th class="text-center">
              Usuario
             </th>
@@ -31,21 +39,23 @@
              Fecha de carga
             </th>
             <th class="text-center">
-              Datos
+              Planilla
             </th>
             <th class="text-center">
               Viviendas
             </th>
+            <th class="text-center">
+              Nueva Viviendas
+            </th>
           </tr>
         </thead>
-       {{-- @if( ($dato->count(Auth::user()->name)) ) --}}
+       @if ($dato->count() )
         @foreach ($dato as $datos)
           
         <tbody class ="text-center">
         <tr>
             
-            <td> 
-             
+            <td>  
               {{$datos->apeynom_ingresador}}          
             </td>
             <td> 
@@ -53,14 +63,20 @@
             </td>
            
             <td>  
-              <a   href="{{url('/planilla/ver/datos/'.$datos->id)}}" class="btn btn-primary"  role ="button" > Ver</a>    
+              <a   href="{{url('/planilla/ver/datos/'.$datos->id)}}" class="btn btn-primary"  role ="button" > Ver</a>   
             </td>
             <td>
-              <a   href="{{url('/planilla/ver/viviendas/'.$datos->id)}}" class="btn btn-info"  role ="button" >ver </a>
+              <a   href="{{url('/planilla/ver/viviendas/'.$datos->id)}}" class="btn btn-info"  role ="button" >Ver </a>
             </td>
-            
+            <td>
+              <a   href="{{url('/planilla/viviendas/'.$datos->id)}}" class="btn btn-info"  role ="button" >Nueva </a>
+            </td>
          @endforeach
-         
+         @else 
+         <td colspan="6" class="text-center">
+           NO HAY PLANILLAS CARGADAS POR ESTE USUARIO
+         </td>
+         @endif
       </table>
     </div>
   </div>
