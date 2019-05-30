@@ -143,7 +143,7 @@
 
 @endsection
 
- <script src="{{ asset('js/jquery.min.js') }} "></script>
+ {{-- <script src="{{ asset('js/jquery.min.js') }} "></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
@@ -167,4 +167,4 @@
             //  })
              
      })
-</script>
+</script> --}}
